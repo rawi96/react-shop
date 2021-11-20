@@ -1,13 +1,15 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
-  theme: {
-    minWidth: {
-      '1/3': '25%'
-    }
-  },
+ theme: {
+    extend: {
+      fontFamily: {
+       OpenSansCondensed: ["Open Sans Condensed", "cursive"],
+      },
+    },
+  }, 
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};
