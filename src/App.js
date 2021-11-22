@@ -3,6 +3,7 @@ import Header from "./components/header";
 import About from "./pages/about";
 import Homepage from "./pages/homepage";
 import Shop from "./pages/shop/shop";
+import SignInAndSignUp from "./pages/sign-in-and-sign-up";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<About />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/sign-in" element={<SignInAndSignUp />} />
         </Routes>
       </BrowserRouter>
     </div>
