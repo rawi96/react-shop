@@ -6,16 +6,15 @@ import Shop from "./pages/shop/shop";
 
 function App() {
   return (
-    <div className="container mx-auto font-OpenSansCondensed"> 
-      <Header />
+    <div className="container mx-auto font-OpenSansCondensed">
       <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/shop" element={<Shop />} />
-      </Routes>
-    </BrowserRouter>
-
+        <Header />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/shop" element={<Shop />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
