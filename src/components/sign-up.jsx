@@ -35,15 +35,18 @@ function SignUp() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <FormInput label="Display Name" type="text" handleChange={e => setDisplayName(e.target.value)}></FormInput>
-            <FormInput label="Email" type="email" handleChange={e => setEmail(e.target.value)}></FormInput>
-            <FormInput label="Password" type="password" handleChange={e => setPassword(e.target.value)}></FormInput>
-            <FormInput label="Confirm Password" type="password" handleChange={e => setConfirmPassword(e.target.value)}></FormInput>
-            <div className="flex justify-end">
-                <Button type="submit" value="Sign up"></Button>
-            </div>
-        </form>
+        <div>
+            <h2 className="text-4xl font-bold mb-5">Sign up</h2>
+            <form onSubmit={handleSubmit}>
+                <FormInput label="Display Name" type="text" handleChange={e => setDisplayName(e.target.value)}></FormInput>
+                <FormInput label="Email" type="email" handleChange={e => setEmail(e.target.value)}></FormInput>
+                <FormInput label="Password" type="password" handleChange={e => setPassword(e.target.value)}></FormInput>
+                <FormInput label="Confirm Password" type="password" handleChange={e => setConfirmPassword(e.target.value)}></FormInput>
+                <div className="flex justify-end">
+                    <Button type="submit" value="Sign up"></Button>
+                </div>
+            </form>
+        </div>
     );
 }
 

@@ -3,7 +3,7 @@ import SignUp from "../components/sign-up";
 
 function SignInAndSignUp() {
   return (
-    <div className="flex justify-around flex-wrap">
+    <div className="flex-auto mx-3.5">
       <SignIn />
       <SignUp />
     </div>
