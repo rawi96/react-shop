@@ -7,7 +7,7 @@ function CartDropdown({ currentUser }) {
     <div className="absolute w-60 h-80 flex flex-col p-5 border border-black bg-white top-20 right-0 z-10">
         <div className="h-60 flex flex-col overflow-y-scroll">
         </div>
-        <Button value="checkout"/>
+        <Button type="button" value="checkout"/>
     </div>
   );
 }

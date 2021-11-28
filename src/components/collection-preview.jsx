@@ -1,6 +1,6 @@
 import CollectionItem from "./collection-item";
 
-function CollectionPreview({title, items}) {
+function CollectionPreview({ title, items }) {
     return (
 
         <div className='flex flex-col'>
@@ -8,8 +8,8 @@ function CollectionPreview({title, items}) {
             <div className='flex flex-wrap'>
                 {items
                     .filter((item, idx) => idx < 4)
-                    .map(({ id, ...otherItemProps }) => (
-                        <CollectionItem key={id} {...otherItemProps} />
+                    .map((item) => (
+                        <CollectionItem key={item.id} item={item} />
                     ))}
             </div>
         </div>
