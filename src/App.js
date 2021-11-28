@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Header from "./components/header";
-import About from "./pages/about";
+import Checkout from "./pages/checkout";
 import Homepage from "./pages/homepage";
 import Shop from "./pages/shop/shop";
 import SignInAndSignUp from "./pages/sign-in-and-sign-up";
@@ -40,7 +40,7 @@ class App extends React.Component {
           <Header />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/shop" element={<Shop />} />
             {this.props.currentUser ? (
               <Route path="/sign-in" element={<Homepage />} />
