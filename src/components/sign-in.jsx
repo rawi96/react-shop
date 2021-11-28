@@ -26,8 +26,8 @@ function SignIn() {
                 <FormInput label="Email" type="email" handleChange={e => setEmail(e.target.value)}></FormInput>
                 <FormInput label="Password" type="password" handleChange={e => setPassword(e.target.value)}></FormInput>
                 <div className="flex justify-end">
-                    <Button type="submit" value="Sign in"></Button>
-                    <Button type="button" isGoogle onClick={signInWithGoogle} value="Sign in with Google"></Button>
+                    <Button type="submit" value="Sign in" />
+                    <Button type="button" isGoogle onClick={signInWithGoogle} value="Sign in with Google" />
                 </div>
             </form>
         </div>
