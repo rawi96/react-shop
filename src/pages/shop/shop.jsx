@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { connect } from "react-redux";
 import CollectionPreview from "../../components/collection-preview";
-import SHOP_DATA from "./shop.data";
+import { selectShopCollections as selectCollections } from "../../redux/shop/shop.selectors";
 
-function Shop() {
-  const [collections, setCollections] = useState(SHOP_DATA);
+function Shop({ collections }) {
   return (
     <div className='flex flex-col'>
       {collections.map(({ id, ...otherCollectionProps }) => (
@@ -13,4 +12,8 @@ function Shop() {
   );
 }
 
-export default Shop;
+const mapStateToProps = (state) => ({
+  collections: selectCollections(state),
+});
+
+export default connect(mapStateToProps)(Shop);
