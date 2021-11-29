@@ -42,7 +42,8 @@ class App extends React.Component {
             <Route path="/" element={<Homepage />} />
             <Route path="react-shop/" element={<Shop />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/shop" element={<Shop />} />
+            <Route path="shop" element={<Shop />} />
+            <Route path="shop/:collectionName" element={<Shop />} />
             {this.props.currentUser ? (
               <Route path="/sign-in" element={<Homepage />} />
             ) : (

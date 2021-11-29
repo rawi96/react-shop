@@ -1,19 +1,14 @@
-import { connect } from "react-redux";
-import CollectionPreview from "../../components/collection-preview";
-import { selectShopCollections as selectCollections } from "../../redux/shop/shop.selectors";
+import { useParams } from "react-router";
+import CollectionsOverview from "../../components/collections-overview";
+import Collection from "../collection";
 
-function Shop({ collections }) {
+function Shop() {
+  const params = useParams();
   return (
     <div className='flex flex-col'>
-      {collections.map(({ id, ...otherCollectionProps }) => (
-        <CollectionPreview key={id} {...otherCollectionProps} />
-      ))}
+      {params.collectionName ? <Collection collectionName={params.collectionName} /> : <CollectionsOverview />}
     </div>
   );
 }
 
-const mapStateToProps = (state) => ({
-  collections: selectCollections(state),
-});
-
-export default connect(mapStateToProps)(Shop);
+export default Shop;
