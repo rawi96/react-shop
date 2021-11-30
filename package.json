@@ -2,7 +2,6 @@
   "name": "react-shop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://leafar396.github.io/react-shop",
   "dependencies": {
     "@craco/craco": "^6.4.0",
     "@testing-library/jest-dom": "^5.15.0",
