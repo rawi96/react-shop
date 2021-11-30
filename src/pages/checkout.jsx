@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import CheckoutItem from "../components/checkout-item";
+import StripeButton from "../components/stripe-button";
 import { selectCartItems, selectCartItemsCount, selectCartTotal } from "../redux/cart/cart.selectors";
 import { setCurrentUser } from "../redux/user/user.actions";
 
@@ -25,6 +26,7 @@ function Checkout({ cartItems, total }) {
       </div>
       {cartItems.map(cartItem => (<CheckoutItem key={cartItem.id} item={cartItem} />))}
       <div className="text-2xl font-bold text-right">TOTAL ${total}</div>
+      <StripeButton price={total} />
     </div>
   );
 }
