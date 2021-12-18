@@ -1,11 +1,10 @@
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectCollectionsForPreview, selectShopCollections } from "../redux/shop/shop.selectors";
+import collectionItem from "./collection-item";
 import CollectionPreview from "./collection-preview";
 
 function CollectionsOverview({ collections }) {
-
-    console.log(collections);
 
     return (<div className='flex flex-col'>
         {collections.map(({ id, ...otherCollectionProps }) => (

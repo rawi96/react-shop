@@ -1,31 +1,46 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import Checkout from "./pages/checkout";
 import Homepage from "./pages/homepage";
 import Shop from "./pages/shop/shop";
 import SignInAndSignUp from "./pages/sign-in-and-sign-up";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import React, { useEffect, useState } from "react";
+import {
+  auth,
+  createUserProfileDocument,
+} from "./firebase/firebase.utils";
+import React from "react";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
+import { selectCollectionsForPreview } from "./redux/shop/shop.selectors";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+    const { setCurrentUser } = this.props;
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot((snapShot) => {
-          this.props.setCurrentUser({
+          setCurrentUser({
             id: snapShot.id,
             ...snapShot.data(),
           });
         });
       }
-      this.props.setCurrentUser(userAuth);
+      setCurrentUser(userAuth);
+
+      // uncomment this to programmatically add collections to firestore
+      // addCollectionAndDocuments(
+      //   "collections",
+      //   collectionsArray.map(({ title, items }) => ({
+      //     title,
+      //     items,
+      //   }))
+      // );
     });
   }
 
@@ -58,6 +73,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => ({
   currentUser: selectCurrentUser(state),
+  collectionsArray: selectCollectionsForPreview(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
